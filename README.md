@@ -113,6 +113,12 @@ API_KEY = YOUR_API_KEY
 
 ## Font Awesome
 
+### Installation
+
+```bash
+npm install @fortawesome/fontawesome-free
+```
+
 ### Configuration
 
 add in angular.json

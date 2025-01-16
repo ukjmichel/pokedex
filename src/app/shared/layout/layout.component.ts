@@ -4,11 +4,9 @@ import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-layout',
-  standalone: true,
   imports: [NavbarComponent, FooterComponent],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.css'
+  styleUrl: './layout.component.css',
+  standalone: true,
 })
-export class LayoutComponent {
-
-}
+export class LayoutComponent {}

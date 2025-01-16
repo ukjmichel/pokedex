@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: solid 1px black;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+#stat-name {
+  margin-right: 10px;
+  width: 35px;
+}
+.stat-bars {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  width: 100%;
+  gap: 5px;
+}
+
+.stat-bar {
+  border-radius: 5px;
+  height: 30px;
+}

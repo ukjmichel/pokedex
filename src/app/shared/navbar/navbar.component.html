@@ -1,1 +1,14 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-light bg-light justify-content-between p-2">
+  <a class="navbar-brand  text-white">PoKédex</a>
+  <form class="d-flex" (submit)="OnSearch()">
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+      [(ngModel)]="searchInput"
+      name="searchInput"
+    />
+    <button class="btn bg-dark text-white" type="submit">Search</button>
+  </form>
+</nav>

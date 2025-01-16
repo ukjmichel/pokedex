@@ -1,0 +1,92 @@
+@if(pokemonData !== 'Not Found' && pokemonData){
+<div class="pokemon-card text-center p-3 border rounded">
+  <header
+    [style.backgroundColor]="mainColor"
+    class="d-flex justify-content-center align-items-center text-white border border-dark rounded p-2 shadow"
+  >
+    <h1>
+      #{{ pokemonData.id.toString().padStart(4, "0") }}
+
+      {{ pokemonData.name | titlecase }}
+    </h1>
+  </header>
+
+  <img
+    [src]="imagePath"
+    [alt]="pokemonData.name"
+    class="img-fluid my-3 border border-1 border-dark p-4 rounded-2"
+  />
+
+  <div class="slots">
+    @for(typeSlots of pokemonData.types; track typeSlots.slot){
+    <div
+      class="type-slot"
+      [style.backgroundColor]="colorsService.getColor(typeSlots.type.name)"
+    >
+      {{ typeSlots.type.name | uppercase }}
+    </div>
+    }
+  </div>
+  <div class="slots">
+    <div class="slot">Height: {{ pokemonData.height | number : "1.1-1" }}m</div>
+    <div class="slot">
+      Weight: {{ pokemonData.weight / 10 | number : "1.1-1" }}kg
+    </div>
+  </div>
+  <div class="border border-1 rounded-2 p-4">
+    {{ flavourtext }}
+  </div>
+  <div>
+    @for(stats of pokemonData.stats; track stats.stat.name){
+    <app-stats
+      [statName]="stats.stat.name"
+      [color]="mainColor"
+      [statValue]="stats.base_stat"
+    />
+    }
+  </div>
+  <div class="abilities">
+    <h2 [style.backgroundColor]="mainColor">Abilities</h2>
+    <div class="abilities-slots">
+      @for (ability of pokemonData.abilities; track ability.slot) {
+      <div class="ability-slot">
+        {{ ability.ability.name }}
+        @if(ability.is_hidden){
+        <br />(Hidden) }
+      </div>
+      }
+    </div>
+  </div>
+  @if(pokemonVarieties!.length>1){
+  <div class="variety-section">
+    <h2 [style.backgroundColor]="mainColor">variety</h2>
+
+    <div class="stamps">
+      @for(variety of pokemonVarieties; track variety.pokemon.name){
+      @if(!variety.is_default){
+
+      <div>
+        <img [src]="imagesService.getImagebyName(variety.pokemon.name)" />
+      </div>
+      } }
+    </div>
+  </div>
+  }
+
+  <div class="evolution-chain-section" [style.backgroundColor]="mainColor">
+    <h2>Evolution Chain</h2>
+    <div class="stamps">
+      @for(specie of evolutionChain; track specie.valueOf()){
+
+      <div>
+        <img [src]="imagesService.getImagebyName(specie)" />
+      </div>
+
+      }
+    </div>
+  </div>
+</div>
+
+} @else {
+<div>No Pokemon Found</div>
+}

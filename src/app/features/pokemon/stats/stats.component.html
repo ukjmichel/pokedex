@@ -1,0 +1,9 @@
+<span id="stat-name">{{ statName() | statName }}</span>
+<div class="stat-bars">
+  @for(bar of statBar; track bar.valueOf()){
+  <div
+    class="stat-bar"
+    [style.backgroundColor]="bar.valueOf()<= statRatio?color():'#DDDD'"
+  ></div>
+  }
+</div>
