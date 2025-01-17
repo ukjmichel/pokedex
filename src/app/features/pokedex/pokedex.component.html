@@ -1,0 +1,19 @@
+<ul>
+  @for( pokemon of pokemonList; track pokemon.name){ @if($index + 1 +
+  (currentPage - 1) * 20 <= 1025) {
+  <li [routerLink]="'/pokemon/' + ($index + 1 + (currentPage - 1) * 20)">
+    <span>{{
+      ($index + 1 + (currentPage - 1) * 20).toString().padStart(4, "0")
+    }}</span>
+    <img [src]="pokemon.url" />
+    {{ pokemon.name }}
+  </li>
+  } }
+</ul>
+<div>
+  <button (click)="getPageData('previous')">previous</button>
+  <span class="page-number">
+    {{ currentPage }}
+  </span>
+  <button (click)="getPageData('next')">next</button>
+</div>

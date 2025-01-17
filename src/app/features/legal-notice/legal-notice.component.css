@@ -1,0 +1,15 @@
+.legal-notice {
+  max-width: 800px;
+  margin: auto;
+}
+h1,
+h2 {
+  color: #0056b3;
+}
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

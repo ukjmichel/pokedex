@@ -227,9 +227,6 @@ export interface PokemonStat {
   stat: Stat;
 }
 
- 
-
-
 // Pokémon Species Details
 export interface PokemonSpeciesDetails {
   base_happiness: number;
@@ -333,4 +330,18 @@ export interface EvolutionNode {
     name: string;
     url: string;
   };
+}
+
+//
+
+export interface PokemonListResponse {
+  count: number; // Total number of Pokémon available
+  next: string | null; // URL for the next page of results (null if none)
+  previous: string | null; // URL for the previous page of results (null if none)
+  results: PokemonResult[]; // Array of Pokémon results
+}
+
+export interface PokemonResult {
+  name: string; // Name of the Pokémon
+  url: string; // URL to get details of the Pokémon
 }

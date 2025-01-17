@@ -1,3 +1,42 @@
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+
+  flex: 1;
+  background-color: #a4a4a4;
+
+  height: 50px;
+  padding: 0 10px;
+
+  color: white;
+  gap: 10px;
+}
+nav span {
+  text-transform: capitalize;
+}
+
+.previous-btn {
+  border-radius: 20px 10px;
+}
+
+.next-btn {
+  justify-content: end;
+  border-radius: 10px 20px;
+}
+
+.pokemon-data {
+  max-width: 800px;
+  margin: auto;
+}
 .slots {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -67,7 +106,7 @@
 }
 
 .stamps div {
-  flex:  1 30%; /* Set width to exactly 33.333% */
+  flex: 1 30%; /* Set width to exactly 33.333% */
   max-width: 30%; /* Ensure items don't exceed 33.333% */
   box-sizing: border-box;
   border-radius: 50%;

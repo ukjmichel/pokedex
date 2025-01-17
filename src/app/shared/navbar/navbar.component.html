@@ -1,14 +1,17 @@
-<nav class="navbar navbar-light bg-light justify-content-between p-2">
-  <a class="navbar-brand  text-white">PoKédex</a>
-  <form class="d-flex" (submit)="OnSearch()">
-    <input
-      class="form-control me-2"
-      type="search"
-      placeholder="Search"
-      aria-label="Search"
-      [(ngModel)]="searchInput"
-      name="searchInput"
-    />
-    <button class="btn bg-dark text-white" type="submit">Search</button>
-  </form>
+<nav class="navbar navbar-light bg-light justify-content-between p-2" style="background: var(--linear-gradiant-red)">
+  <a class="navbar-brand text-white" href="/">PoKédex</a>
+  <div class="d-flex">
+    <a class="btn btn-primary me-2" [routerLink]="['/pokedex']"  >Go to Pokédex</a> <!-- Added link to Pokédex -->
+    <form class="d-flex" (submit)="OnSearch()">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="searchInput"
+        name="searchInput"
+      />
+      <button class="btn bg-dark text-white" type="submit">Search</button>
+    </form>
+  </div>
 </nav>

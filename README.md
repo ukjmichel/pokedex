@@ -174,3 +174,31 @@ add in angular.json
 | `.container-lg`  | Auto                 | Auto           | Auto            | 960px          | 1140px                | 1320px                      |
 | `.container-xl`  | Auto                 | Auto           | Auto            | Auto           | 1140px                | 1320px                      |
 | `.container-xxl` | Auto                 | Auto           | Auto            | Auto           | Auto                  | 1320px                      |
+
+## Pokémon API v2 Endpoints
+
+**Base Url:** "https://pokeapi.co
+
+| **Endpoint**                        | **Description**                               | **Parameters**    | **Example**                             |
+| ----------------------------------- | --------------------------------------------- | ----------------- | --------------------------------------- |
+| `/api/v2/pokemon`                   | List all Pokémon or fetch a specific Pokémon. | `limit`, `offset` | `/api/v2/pokemon?limit=10&offset=20`    |
+| `/api/v2/pokemon/{id or name}`      | Get detailed data of a specific Pokémon.      | None              | `/api/v2/pokemon/25` (for Pikachu)      |
+| `/api/v2/type`                      | List all Pokémon types.                       | None              | `/api/v2/type`                          |
+| `/api/v2/type/{id or name}`         | Get details about a specific type.            | None              | `/api/v2/type/10` (for Fire)            |
+| `/api/v2/ability`                   | List all abilities.                           | `limit`, `offset` | `/api/v2/ability?limit=5`               |
+| `/api/v2/ability/{id or name}`      | Get details about a specific ability.         | None              | `/api/v2/ability/1` (for Stench)        |
+| `/api/v2/move`                      | List all moves.                               | `limit`, `offset` | `/api/v2/move?limit=15`                 |
+| `/api/v2/move/{id or name}`         | Get details about a specific move.            | None              | `/api/v2/move/1` (for Pound)            |
+| `/api/v2/region`                    | List all regions.                             | None              | `/api/v2/region`                        |
+| `/api/v2/region/{id or name}`       | Get details about a specific region.          | None              | `/api/v2/region/1` (for Kanto)          |
+| `/api/v2/encounter-method`          | List all encounter methods.                   | None              | `/api/v2/encounter-method`              |
+| `/api/v2/encounter-condition`       | List all encounter conditions.                | None              | `/api/v2/encounter-condition`           |
+| `/api/v2/encounter-condition-value` | List all encounter condition values.          | None              | `/api/v2/encounter-condition-value`     |
+| `/api/v2/evolution-chain`           | List all evolution chains.                    | `limit`, `offset` | `/api/v2/evolution-chain?limit=10`      |
+| `/api/v2/evolution-chain/{id}`      | Get details about a specific evolution chain. | None              | `/api/v2/evolution-chain/1`             |
+| `/api/v2/pokedex`                   | List all Pokédex entries.                     | None              | `/api/v2/pokedex`                       |
+| `/api/v2/pokedex/{id or name}`      | Get details about a specific Pokédex.         | None              | `/api/v2/pokedex/1` (for Kanto Pokédex) |
+| `/api/v2/item`                      | List all items.                               | `limit`, `offset` | `/api/v2/item?limit=20`                 |
+| `/api/v2/item/{id or name}`         | Get details about a specific item.            | None              | `/api/v2/item/1` (for Master Ball)      |
+| `/api/v2/stat`                      | List all base stats.                          | None              | `/api/v2/stat`                          |
+| `/api/v2/stat/{id or name}`         | Get details about a specific stat.            | None              | `/api/v2/stat/1` (for HP)               |

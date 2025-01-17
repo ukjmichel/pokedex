@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
   standalone: true,
@@ -16,7 +16,7 @@ export class NavbarComponent {
   router = inject(Router);
 
   async OnSearch() {
-    if (this.searchInput.trim()) {
+    if (this.searchInput.trim() && Number(this.searchInput) <= 1025) {
       this.router.navigate(['pokemon', this.searchInput]);
     }
   }

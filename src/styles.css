@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   --primary-grass: #3fa129;
+  --linear-gradiant-red: linear-gradient(90deg, #f00 0%, #c42e2e 100%);
 }
 
 @font-face {

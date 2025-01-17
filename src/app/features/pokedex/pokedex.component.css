@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+ul {
+  list-style: none;
+}
+
+ul > span {
+  margin-right: 10px;
+}
+
+li {
+  text-transform: capitalize;
+}
+
+button {
+  width: 100px;
+}
+
+button:first-of-type {
+  border-radius: 5px 0 0 5px;
+}
+
+button:last-of-type {
+  border-radius: 0 5px 5px 0;
+}
+
+.page-number {
+  margin: 10px;
+}

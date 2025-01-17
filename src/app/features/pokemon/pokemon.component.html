@@ -1,18 +1,42 @@
 @if(pokemonData !== 'Not Found' && pokemonData){
-<div class="pokemon-card text-center p-3 border rounded">
-  <header
-    [style.backgroundColor]="mainColor"
-    class="d-flex justify-content-center align-items-center text-white border border-dark rounded p-2 shadow"
-  >
-    <h1>
-      #{{ pokemonData.id.toString().padStart(4, "0") }}
+<div class="pokemon-card text-center p-3 rounded pokemon-data">
+  <header>
+    <nav>
+      <div class="previous-btn" [routerLink]="['/pokemon',previousPokemon.id]"  >
+        @if(previousPokemon.id){
+        <span
+          >@if(previousPokemon){ #
+          {{ previousPokemon.id.toString().padStart(4, "0") }}
+          }</span
+        >
+        <span>{{ previousPokemon.name }}</span>
+        }
+      </div>
+      <div class="next-btn" [routerLink]="['/pokemon',nextPokemon.id]">
+        @if(nextPokemon.id){
 
-      {{ pokemonData.name | titlecase }}
-    </h1>
+        <span>{{ nextPokemon.name }}</span>
+        <span>
+          @if(nextPokemon){ #
+          {{ nextPokemon.id.toString().padStart(4, "0") }}}
+        </span>
+        }
+      </div>
+    </nav>
+    <div
+      [style.backgroundColor]="mainColor"
+      class="d-flex justify-content-center align-items-center text-white border border-dark rounded p-2 shadow"
+    >
+      <h1>
+        #{{ pokemonData.id.toString().padStart(4, "0") }}
+
+        {{ pokemonData.name | titlecase }}
+      </h1>
+    </div>
   </header>
 
   <img
-    [src]="imagePath"
+    [src]="pokemonData.sprites.other?.['official-artwork']?.front_default"
     [alt]="pokemonData.name"
     class="img-fluid my-3 border border-1 border-dark p-4 rounded-2"
   />
@@ -57,18 +81,17 @@
       }
     </div>
   </div>
-  @if(pokemonVarieties!.length>1){
+  @if(pokemonVarieties!.length>0){
   <div class="variety-section">
     <h2 [style.backgroundColor]="mainColor">variety</h2>
 
     <div class="stamps">
-      @for(variety of pokemonVarieties; track variety.pokemon.name){
-      @if(!variety.is_default){
+      @for(variety of pokemonVarieties; track variety.name){
 
       <div>
-        <img [src]="imagesService.getImagebyName(variety.pokemon.name)" />
+        <img [src]="variety.url" loading="lazy" />
       </div>
-      } }
+      }
     </div>
   </div>
   }
@@ -79,7 +102,7 @@
       @for(specie of evolutionChain; track specie.valueOf()){
 
       <div>
-        <img [src]="imagesService.getImagebyName(specie)" />
+        <img [src]="specie?.url" loading="lazy" />
       </div>
 
       }
@@ -88,5 +111,5 @@
 </div>
 
 } @else {
-<div>No Pokemon Found</div>
+<div class="pokemon-data">No Pokemon Found</div>
 }
