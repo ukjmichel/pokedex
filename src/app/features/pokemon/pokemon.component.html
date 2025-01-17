@@ -2,7 +2,7 @@
 <div class="pokemon-card text-center p-3 rounded pokemon-data">
   <header>
     <nav>
-      <div class="previous-btn" [routerLink]="['/pokemon',previousPokemon.id]"  >
+      <div class="previous-btn" (click)="navigate(pokemonData.id - 1)">
         @if(previousPokemon.id){
         <span
           >@if(previousPokemon){ #
@@ -12,7 +12,7 @@
         <span>{{ previousPokemon.name }}</span>
         }
       </div>
-      <div class="next-btn" [routerLink]="['/pokemon',nextPokemon.id]">
+      <div class="next-btn" (click)="navigate(pokemonData.id + 1)">
         @if(nextPokemon.id){
 
         <span>{{ nextPokemon.name }}</span>
@@ -57,7 +57,10 @@
       Weight: {{ pokemonData.weight / 10 | number : "1.1-1" }}kg
     </div>
   </div>
-  <div class="border border-1 rounded-2 p-4">
+  <div
+    class="d-flex align-item-center border border-1 rounded-2 p-4"
+    [style.height]="'150px'"
+  >
     {{ flavourtext }}
   </div>
   <div>
