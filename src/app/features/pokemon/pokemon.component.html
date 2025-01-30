@@ -52,13 +52,15 @@
     }
   </div>
   <div class="slots">
-    <div class="slot">Height: {{ pokemonData.height | number : "1.1-1" }}m</div>
+    <div class="slot">
+      Height: {{ pokemonData.height / 10 | number : "1.1-1" }}m
+    </div>
     <div class="slot">
       Weight: {{ pokemonData.weight / 10 | number : "1.1-1" }}kg
     </div>
   </div>
   <div
-    class="d-flex align-item-center border border-1 rounded-2 p-4"
+    class="d-flex align-items-center border border-1 rounded-2 p-4"
     [style.height]="'150px'"
   >
     {{ flavourtext }}
@@ -84,33 +86,15 @@
       }
     </div>
   </div>
-  @if(pokemonVarieties!.length>0){
-  <div class="variety-section">
-    <h2 [style.backgroundColor]="mainColor">variety</h2>
+  <app-variety
+    [pokemonSpecieData]="pokemonSpecieData"
+    [mainColor]="mainColor"
+  />
 
-    <div class="stamps">
-      @for(variety of pokemonVarieties; track variety.name){
-
-      <div>
-        <img [src]="variety.url" loading="lazy" />
-      </div>
-      }
-    </div>
-  </div>
-  }
-
-  <div class="evolution-chain-section" [style.backgroundColor]="mainColor">
-    <h2>Evolution Chain</h2>
-    <div class="stamps">
-      @for(specie of evolutionChain; track specie.valueOf()){
-
-      <div>
-        <img [src]="specie?.url" loading="lazy" />
-      </div>
-
-      }
-    </div>
-  </div>
+  <app-evolution-chain
+    [pokemonSpecieData]="pokemonSpecieData"
+    [mainColor]="mainColor"
+  />
 </div>
 
 } @else {

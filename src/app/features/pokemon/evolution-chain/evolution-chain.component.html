@@ -1,0 +1,15 @@
+<div class="evolution-chain-section" [style.backgroundColor]="mainColor()">
+  <h2>Evolution Chain</h2>
+  <div class="stamps">
+    @for(specie of evolutionChain; track specie.valueOf()){
+    <div>
+      <img
+        [src]="specie?.url"
+        [alt]="specie?.name"
+        loading="lazy"
+        (click)="navigate(specie.id)"
+      />
+    </div>
+    }
+  </div>
+</div>

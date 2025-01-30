@@ -2,6 +2,9 @@
 :root {
   --primary-grass: #3fa129;
   --linear-gradiant-red: linear-gradient(90deg, #f00 0%, #c42e2e 100%);
+  --gradient-background: linear-gradient(to right, #ff4b2b, #ff416c);
+  --btn-color: #ff4b2b;
+  --btn-hover-color: #ff2e00;
 }
 
 @font-face {

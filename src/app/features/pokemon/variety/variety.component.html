@@ -1,0 +1,14 @@
+@if(pokemonVarieties!.length>0){
+  <div class="variety-section">
+    <h2 [style.backgroundColor]="mainColor()">variety</h2>
+
+    <div class="stamps">
+      @for(variety of pokemonVarieties; track variety.name){
+
+      <div>
+        <img [src]="variety.url" loading="lazy" />
+      </div>
+      }
+    </div>
+  </div>
+  }

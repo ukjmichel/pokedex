@@ -1,0 +1,36 @@
+.evolution-chain-section h2 {
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-color: #535353;
+  text-transform: capitalize;
+}
+.stamps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+}
+
+.stamps div {
+  flex: 1 30%; /* Set width to exactly 33.333% */
+  max-width: 30%; /* Ensure items don't exceed 33.333% */
+  box-sizing: border-box;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.stamps img {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+}
+
+.evolution-chain-section {
+  width: 100%;
+  padding-bottom: 20px;
+  border-radius: 0 0 10px 10px;
+}
